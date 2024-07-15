@@ -19,10 +19,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
 
 // Manejar método POST - Agregar categoría
 else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $directorio="imagenes/";
+    $nombreArchivo=$_FILES['imagen_categoria']['name'];
+    $rutaTemporal=$_FILES['imagen_categoria']['tmp_name'];
+
+    $rutaDefinitiva=$directorio.$nombreArchivo;
+
+   
+
+    if(!file_exists($directorio)){
+        mkdir($directorio,0777);
+    }
+
+    move_uploaded_file($rutaTemporal,$rutaDefinitiva);
+
+
+
     // Obtener datos del formulario
     $nombre_categoria = $_POST['nombre_categoria'];
     $descripcion_categoria = $_POST['descripcion_categoria'];
-    $imagen_categoria = $_POST['imagen_categoria']; // Aquí deberías manejar la lógica de subir y guardar la imagen si es necesario
+    $imagen_categoria = $rutaDefinitiva; // Aquí deberías manejar la lógica de subir y guardar la imagen si es necesario
 
     $objConexion = new ConexionDB();
     $objCategoria = new Categoria($objConexion);
@@ -68,4 +84,6 @@ else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $objCategoria->actualizarCategoria();
     exit;
 }
-?>
+
+// Si no coincide con ningún método de solicitud, devolver Bad Request
+header("HTTP/1.1 400 Bad Request");

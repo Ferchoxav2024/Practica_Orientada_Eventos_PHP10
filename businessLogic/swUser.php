@@ -59,6 +59,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $cedula = intval($data['cedula']) ;
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
+    $password = $_POST['password'];
     $email = $_POST['email'];
     $telefono = $_POST['telefono'];
     $perfil = $_POST['perfil'];
@@ -69,6 +70,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $objUser->setCedula($cedula);
     $objUser->setFirstName($firstName);
     $objUser->setLastName($lastName);
+    $objUser->setPassword($password);
     $objUser->setEmail($email);
     $objUser->setTelefono($telefono);
     $objUser->setPerfil($perfil);

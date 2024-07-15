@@ -124,6 +124,8 @@ class Usuario
 
     }
 
+
+    //borrarusuario
     public function eliminarUsuario():bool
     {
         try {
@@ -140,8 +142,7 @@ class Usuario
 
     public function editarUsuario(){
         try {
-            
-
+        
             $sql="UPDATE usuarios SET firstName = ?, lastName = ?, password = ?, telefono = ?, perfil = ? WHERE cedula = ?";
             $stmt=$this->connectionDB->prepare($sql);
             $stmt->execute(array($this->getFirstName(),$this->getLastName(),$this->getPassword(), $this->getTelefono(),$this->getPerfil(),$this->getCedula()));

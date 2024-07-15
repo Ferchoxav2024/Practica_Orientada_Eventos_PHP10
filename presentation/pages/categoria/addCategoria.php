@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro categoria</title>
-    <!-- Incluir Tailwind CSS -->
-    <link rel="stylesheet" href="../../styles/tailwind.css">
-
+    <title>Formulario con Tailwind CSS</title>
+    <!-- Incluye Tailwind CSS -->
+    <link href="../../styles/tailwind.css" rel="stylesheet">
 </head>
-<body>
-<div class="flex justify-center items-center min-h-screen">
-        <div class="max-w-md bg-white rounded-lg overflow-hidden shadow-md mx-auto">
-            <h2 class="text-2xl font-bold text-center p-4 bg-[#191d20] text-white">Registro de Nueva Categoría</h2>
-            <form  id="categoriaForm"  class="p-4">
-                <div class="mb-4">
-                    <label for="nombre" class="block text-[#191d20] font-bold mb-2">Nombre de la Categoría:</label>
-                    <input type="text" id="nombre_categoria" name="nombre_categoria" placeholder="ingrese la categoria"  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"></input>
-                </div>
 
-                <div class="mb-4">
-                    <label for="descripcion" class="block text-[#191d20] font-bold mb-2">Descripción de la Categoría:</label>
-                    <input type="text" id="descripcion_categoria" name="descripcion_categoria" placeholder="descripcion" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"></input>
-                </div>
+<body class="bg-gray-100">
+    <!-- Barra de navegación -->
+    <?php include ('../../components/navigation.php'); ?>
 
+    <div class="container mx-auto max-w-md py-8">
+        <!-- Encabezado -->
+        <div class="flex items-center justify-between mb-4 text-justify">
+            <h1 class="text-3xl font-bold text-gray-800">Ingresar Categorias</h1>
+        </div>
+            <form  id="categoriaForm"  class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div class="mb-4">
-                    <label for="imagen" class="block text-[#191d20] font-bold mb-2">Imagen de la Categoría:</label>
-                    <input type="text" id="imagen_categoria" name="imagen_categoria"   class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"></input>
+                    <label for="nombre_categoria" class="block text-gray-700 text-sm font-bold mb-2">Nombre categoria:</label>
+                    <input type="text" id="nombre_categoria" name="nombre_categoria" placeholder="Ingrese su nombre"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
-
-                <div class="text-center">
-                    <button type="submit" class="px-4 py-2 bg-[#ed2839] text-white rounded-lg cursor-pointer hover:bg-[#642226]">REGISTRAR CATEGORIA</button>
+                <div class="mb-4">
+                    <label for="descripcion_categoria" class="block text-gray-700 text-sm font-bold mb-2">Descripcion categoria:</label>
+                    <input type="text" id="descripcion_categoria" name="descripcion_categoria" placeholder="Ingrese su apellido"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-6">
+                    <label for="imagen_categoria" class="block text-gray-700 text-sm font-bold mb-2">Imagen categoria:</label>
+                    <input type="file" id="imagen_categoria" name="imagen_categoria"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Ingresar</button>
                 </div>
             </form>
         </div>
