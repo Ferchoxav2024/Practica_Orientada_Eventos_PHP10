@@ -4,9 +4,9 @@ class Categoria
 {
     // Atributos
     private int $id;
-    private string $nombre;
-    private string $descripcion;
-    private string $imagen;
+    private string $nombre_categoria;
+    private string $descripcion_categoria;
+    private string $imagen_categoria;
 
     private $connectionDB;
 
@@ -27,34 +27,34 @@ class Categoria
         return $this->id;
     }
 
-    public function setNombre(string $nombre): void
+    public function setNombre(string $nombre_categoria): void
     {
-        $this->nombre = $nombre;
+        $this->nombre_categoria = $nombre_categoria;
     }
 
     public function getNombre(): string
     {
-        return $this->nombre;
+        return $this->nombre_categoria;
     }
 
-    public function setDescripcion(string $descripcion): void
+    public function setDescripcion(string $descripcion_categoria): void
     {
-        $this->descripcion = $descripcion;
+        $this->descripcion_categoria = $descripcion_categoria;
     }
 
     public function getDescripcion(): string
     {
-        return $this->descripcion;
+        return $this->descripcion_categoria;
     }
 
-    public function setImagen(string $imagen): void
+    public function setImagen(string $imagen_categoria): void
     {
-        $this->imagen = $imagen;
+        $this->imagen_categoria = $imagen_categoria;
     }
 
     public function getImagen(): string
     {
-        return $this->imagen;
+        return $this->imagen_categoria;
     }
 
     // Método para agregar una categoría

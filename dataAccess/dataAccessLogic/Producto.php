@@ -1,5 +1,5 @@
 <?php
-include_once '../dataAccess/conexion/Conexion.php'; // Asegúrate de que la ruta sea correcta según tu estructura de archivos
+include ('../dataAccess/conexion/Conexion.php');// Asegúrate de que la ruta sea correcta según tu estructura de archivos
 
 class Producto
 {

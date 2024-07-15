@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
     $objConexion = new ConexionDB();
     $objUser = new Usuario($objConexion);
 
-    $objUser->setCedula($perfil);
+    $objUser->setCedula($cedula);
     $objUser->eliminarUsuario();
     $response = array('sucess'=>true,'message'=>'Usuario eliminado correctamente');
     exit();
@@ -36,7 +36,8 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $objUser->setTelefono($telefono);
     $objUser->setPerfil($perfil);
     $objUser->registrarUsuario();
-    
+    $response = array('success' => true, 'message' => 'Usuario agregado correctamente');
+    echo json_encode($response);
     exit;
 }
 
@@ -72,7 +73,8 @@ else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $objUser->setTelefono($telefono);
     $objUser->setPerfil($perfil);
     $objUser->editarUsuario();
-    
+    $response = array('success' => true, 'message' => 'Usuario actualizado correctamente');
+    echo json_encode($response);
     exit;
 }
 ?>

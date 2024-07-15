@@ -1,26 +1,17 @@
 <?php
-require_once '../dataAccess/conexion/Conexion.php';
-require_once '../dataAccess/dataAccessLogic/Producto.php';
+include ('../dataAccess/dataAccessLogic/Producto.php');
 
-// Instancia de conexión a la base de datos
-$objConexion = new ConexionDB();
-$objProducto = new Producto($objConexion);
 
 // Manejar método DELETE - Eliminar producto
 if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
     // Obtener el ID del producto a eliminar
     $id = intval($_GET['id']);
+    $objConexion = new ConexionDB();
+    $objProducto = new Producto($objConexion);
 
-    // Establecer el ID en el objeto de producto
     $objProducto->setId($id);
-
-    // Llamar al método para eliminar el producto
-    if ($objProducto->eliminarProducto()) {
-        $response = array('success' => true, 'message' => 'Producto eliminado correctamente');
-    } else {
-        $response = array('success' => false, 'message' => 'Error al eliminar el producto');
-    }
-    echo json_encode($response);
+    $objProducto->eliminarProducto();
+    $response = array('sucess'=>true,'message'=>'Producto eliminado correctamente');
     exit();
 }
 
@@ -32,6 +23,9 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $precio = $_POST['precio_producto'];
     $imagen = $_POST['imagen_producto']; // Aquí deberías manejar la lógica de subir y guardar la imagen si es necesario
     $categoria_id = $_POST['categoria_id'];
+    // Instancia de conexión a la base de datos
+    $objConexion = new ConexionDB();
+    $objProducto = new Producto($objConexion);
 
     // Setear datos en el objeto de producto
     $objProducto->setNombre($nombre);
@@ -39,22 +33,18 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $objProducto->setPrecio($precio);
     $objProducto->setImagen($imagen);
     $objProducto->setCategoriaId($categoria_id);
-
-    // Llamar al método para agregar el producto
-    if ($objProducto->agregarProducto()) {
-        $response = array('success' => true, 'message' => 'Producto agregado correctamente');
-    } else {
-        $response = array('success' => false, 'message' => 'Error al agregar el producto');
-    }
-    echo json_encode($response);
+    $objProducto->agregarProducto();
     exit();
 }
 
 // Manejar método GET - Listar productos
 else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $arrayProductos = $objProducto->listarProductos();
-    echo json_encode($arrayProductos);
-    exit();
+    $objConexion = new ConexionDB();
+    $objProducto= new Producto($objConexion);
+    $array = $objProducto->listarProductos();
+    echo json_encode($array);
+    exit;
+
 }
 
 // Manejar método PUT - Actualizar producto
@@ -70,6 +60,9 @@ else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $imagen = $data['imagen_producto']; // Aquí también deberías manejar la lógica de la imagen si es necesaria
     $categoria_id = $data['categoria_id'];
 
+    $objConexion = new ConexionDB();
+    $objProducto= new Producto($objConexion);
+
     // Setear datos en el objeto de producto
     $objProducto->setId($id);
     $objProducto->setNombre($nombre);
@@ -77,14 +70,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     $objProducto->setPrecio($precio);
     $objProducto->setImagen($imagen);
     $objProducto->setCategoriaId($categoria_id);
-
-    // Llamar al método para actualizar el producto
-    if ($objProducto->actualizarProducto()) {
-        $response = array('success' => true, 'message' => 'Producto actualizado correctamente');
-    } else {
-        $response = array('success' => false, 'message' => 'Error al actualizar el producto');
-    }
-    echo json_encode($response);
-    exit();
+    $objProducto->actualizarProducto();
+    exit;
 }
 ?>
