@@ -4,7 +4,7 @@ include ('../dataAccess/dataAccessLogic/User.php');
 
 //delete user
 if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
-    $cedula= intval($_GET['cedula']);
+    $cedula= ($_GET['cedula']);
     $objConexion = new ConexionDB();
     $objUser = new Usuario($objConexion);
 
@@ -56,7 +56,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
 
     $data= json_decode(file_get_contents('php://input'), true);
-    $cedula = intval($data['cedula']) ;
+    $cedula = ($data['cedula']) ;
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $password = $_POST['password'];
