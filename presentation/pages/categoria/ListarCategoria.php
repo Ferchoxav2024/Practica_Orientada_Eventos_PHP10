@@ -16,8 +16,8 @@
     <div class="container mx-auto max-w-3xl py-8">
         <!-- Encabezado -->
         <div class="flex items-center justify-between mb-4">
-            <h1 class="text-3xl font-bold text-gray-800">Gestión de Usuarios</h1>
-            <a href="addCategoria.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Crear Usuario</a>
+            <h1 class="text-3xl font-bold text-gray-800">Gestión de Categorias</h1>
+            <a href="addCategoria.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Crear Categoria</a>
         </div>
 
         <!-- Tabla de Usuarios -->
