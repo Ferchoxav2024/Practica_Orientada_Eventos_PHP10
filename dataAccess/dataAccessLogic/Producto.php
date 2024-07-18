@@ -1,25 +1,25 @@
 <?php
-include ('../dataAccess/conexion/Conexion.php');// Asegúrate de que la ruta sea correcta según tu estructura de archivos
+include ('../dataAccess/conexion/Conexion.php');
 
 class Producto
 {
     // Atributos
-    private int $id;
-    private string $nombre;
-    private string $descripcion;
-    private float $precio;
-    private string $imagen;
-    private int $categoria_id;
+    private $id;
+    private $nombre_producto;
+    private $descripcion_producto;
+    private $precio_producto;
+    private $imagen_producto;
+    private $categoria_id;
 
     private $connectionDB;
 
-    // Constructor
+    // Constructor para conectar a la db
     public function __construct(ConexionDB $connectionDB)
     {
         $this->connectionDB = $connectionDB->connect();
     }
 
-    // Métodos Get y Set para cada propiedad
+    // Métodos Get y Set para cada atributo
     public function setId(int $id): void
     {
         $this->id = $id;
@@ -30,44 +30,44 @@ class Producto
         return $this->id;
     }
 
-    public function setNombre(string $nombre): void
+    public function setNombre(string $nombre_producto): void
     {
-        $this->nombre = $nombre;
+        $this->nombre_producto = $nombre_producto;
     }
 
     public function getNombre(): string
     {
-        return $this->nombre;
+        return $this->nombre_producto;
     }
 
-    public function setDescripcion(string $descripcion): void
+    public function setDescripcion(string $descripcion_producto): void
     {
-        $this->descripcion = $descripcion;
+        $this->descripcion_producto = $descripcion_producto;
     }
 
     public function getDescripcion(): string
     {
-        return $this->descripcion;
+        return $this->descripcion_producto;
     }
 
-    public function setPrecio(float $precio): void
+    public function setPrecio(float $precio_producto): void
     {
-        $this->precio = $precio;
+        $this->precio_producto = $precio_producto;
     }
 
     public function getPrecio(): float
     {
-        return $this->precio;
+        return $this->precio_producto;
     }
 
-    public function setImagen(string $imagen): void
+    public function setImagen(string $imagen_producto): void
     {
-        $this->imagen = $imagen;
+        $this->imagen_producto = $imagen_producto;
     }
 
     public function getImagen(): string
     {
-        return $this->imagen;
+        return $this->imagen_producto;
     }
 
     public function setCategoriaId(int $categoria_id): void
@@ -80,13 +80,14 @@ class Producto
         return $this->categoria_id;
     }
 
-    // Método para agregar un producto
+    // Método para agregar un producto Osea para que detecte el sql y execute, 
+    // que sirve para que decte los get, es dond creamos las funciones. Que aga cambios en la tabla de la db
     public function agregarProducto(): bool
     {
         try {
             $sql = "INSERT INTO productos (nombre_producto, descripcion_producto, precio_producto, imagen_producto, categoria_id) VALUES (?, ?, ?, ?, ?)";
             $stmt = $this->connectionDB->prepare($sql);
-            $stmt->execute(array($this->getNombre(), $this->getDescripcion(), $this->getPrecio(), $this->getImagen(), $this->getCategoriaId()));
+            $stmt->execute([$this->getNombre(), $this->getDescripcion(), $this->getPrecio(), $this->getImagen(), $this->getCategoriaId()]);
             $count = $stmt->rowCount();
             return $this->affectedColumns($count);
         } catch (PDOException $e) {
@@ -107,7 +108,6 @@ class Producto
             return $arrayQuery;
         } catch (PDOException $e) {
             echo $e->getMessage();
-            
         }
         return [];
     }
@@ -118,7 +118,7 @@ class Producto
         try {
             $sql = "DELETE FROM productos WHERE id=?";
             $stmt = $this->connectionDB->prepare($sql);
-            $stmt->execute(array($this->getId()));
+            $stmt->execute([$this->getId()]);
             $count = $stmt->rowCount();
             return $this->affectedColumns($count);
         } catch (PDOException $e) {
@@ -127,13 +127,13 @@ class Producto
         }
     }
 
-    // Método para actualizar un producto
+    // Método para actualizar un producto, el set dirve para asignar un valor nuevo para la db
     public function actualizarProducto(): bool
     {
         try {
             $sql = "UPDATE productos SET nombre_producto = ?, descripcion_producto = ?, precio_producto = ?, imagen_producto = ?, categoria_id = ? WHERE id = ?";
             $stmt = $this->connectionDB->prepare($sql);
-            $stmt->execute(array($this->getNombre(), $this->getDescripcion(), $this->getPrecio(), $this->getImagen(), $this->getCategoriaId(), $this->getId()));
+            $stmt->execute([$this->getNombre(), $this->getDescripcion(), $this->getPrecio(), $this->getImagen(), $this->getCategoriaId(), $this->getId()]);
             $count = $stmt->rowCount();
             return $this->affectedColumns($count);
         } catch (PDOException $e) {
@@ -143,14 +143,9 @@ class Producto
     }
 
     // Método auxiliar para verificar columnas afectadas
-    public function affectedColumns($numer): bool
+    private function affectedColumns($numer): bool
     {
-        if ($numer<>null && $numer>0) {
-            $msm=true;
-        } else {
-            $msm=false;
-        }
-        return $msm;
+        return ($numer !== null && $numer > 0);
     }
 }
 ?>

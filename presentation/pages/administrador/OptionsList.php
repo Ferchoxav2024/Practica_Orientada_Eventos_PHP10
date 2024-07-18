@@ -16,49 +16,81 @@
     <?php include('../../components/navigation.php');?>
 
     <!-- Contenido principal -->
-    <div class="container mx-auto max-w-3xl py-8">
-        <!-- Cardview con ícono -->
-        <div class="container mx-auto max-w-3xl py-8">
-            <!-- Cardview con ícono -->
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+    <div class="container mx-auto max-w-4xl py-8">
+        <!-- Grid para cardviews -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Cardview Categorias -->
+            <div class="max-w-sm rounded overflow-hidden  bg-white block  text-black p-6  shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="px-6 py-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-user-circle text-3xl text-blue-500 mr-2"></i>
+                        <i class="fas fa-list text-3xl text-blue-500 mr-2"></i>
                         <div class="font-bold text-xl">Categorias</div>
                     </div>
                     <p class="text-gray-700 text-base text-justify">
-                    La sección de administración de categorias te permite gestionar de manera eficiente todas las categorias registradas en tu plataforma. 
+                        La sección de administración de categorias te permite gestionar de manera eficiente todas las categorias registradas en tu plataforma.
                     </p>
                 </div>
                 <div class="px-6 pt-4 pb-2">
                     <a href="../categoria/listarCategoria.php"
-                        class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Ingresar
                     </a>
                 </div>
             </div>
-            
-        </div>
-        <!-- Cardview con ícono -->
-        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+
+            <!-- Cardview Usuarios -->
+            <div class="max-w-sm rounded overflow-hidden  bg-white block  text-black p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="px-6 py-4">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-user-circle text-3xl text-blue-500 mr-2"></i>
                         <div class="font-bold text-xl">Usuarios</div>
                     </div>
                     <p class="text-gray-700 text-base text-justify">
-                    La sección de administración de usuarios te permite gestionar de manera eficiente todos los usuarios registradas en tu plataforma. 
+                        La sección de administración de usuarios te permite gestionar de manera eficiente todos los usuarios registrados en tu plataforma.
                     </p>
                 </div>
                 <div class="px-6 pt-4 pb-2">
                     <a href="../user/listarUsuario.php"
-                        class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Ingresar
                     </a>
                 </div>
             </div>
-        
-        
+            <div class="max-w-sm  overflow-hidden bg-white block  text-black p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="px-6 py-4">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-circle text-3xl text-blue-500 mr-2"></i>
+                        <div class="font-bold text-xl">Usuarios</div>
+                    </div>
+                    <p class="text-gray-700 text-base text-justify">
+                        La sección de administración de usuarios te permite gestionar de manera eficiente todos los usuarios registrados en tu plataforma.
+                    </p>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                    <a href="../user/listarUsuario.php"
+                        class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Ingresar
+                    </a>
+                </div>
+            </div>
+            <div class="max-w-sm  overflow-hidden  bg-white block  text-black p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="px-6 py-4">
+                    <div class="flex items-center mb-4 ">
+                        <i class="fas fa-user-circle text-3xl text-blue-500 mr-2"></i>
+                        <div class="font-bold text-xl">Usuarios</div>
+                    </div>
+                    <p class="text-gray-700 text-base text-justify">
+                        La sección de administración de usuarios te permite gestionar de manera eficiente todos los usuarios registrados en tu plataforma.
+                    </p>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                    <a href="../user/listarUsuario.php"
+                        class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Ingresar
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

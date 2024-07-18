@@ -33,7 +33,7 @@
             </div>
             <div class="mb-6">
                 <label for="imagen_categoria" class="block text-gray-700 text-sm font-bold mb-2">Imagen categoria:</label>
-                <input type="text" id="imagen_categoria" name="imagen_categoria" accept="image/*"
+                <input type="file" id="imagen_categoria" name="imagen_categoria" accept="image/*"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="flex items-center justify-between">
