@@ -43,14 +43,14 @@
                 <div class="px-6 py-4">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-user-circle text-3xl text-blue-500 mr-2"></i>
-                        <div class="font-bold text-xl">Usuarios</div>
+                        <div class="font-bold text-xl">Productos</div>
                     </div>
                     <p class="text-gray-700 text-base text-justify">
-                        La sección de administración de usuarios te permite gestionar de manera eficiente todos los usuarios registrados en tu plataforma.
+                        La sección de administración de productos te permite gestionar de manera eficiente todos los productos registrados en tu plataforma.
                     </p>
                 </div>
                 <div class="px-6 pt-4 pb-2">
-                    <a href="../user/listarUsuario.php"
+                    <a href="../producto/listarProducto.php"
                         class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Ingresar
                     </a>
@@ -77,14 +77,14 @@
                 <div class="px-6 py-4">
                     <div class="flex items-center mb-4 ">
                         <i class="fas fa-user-circle text-3xl text-blue-500 mr-2"></i>
-                        <div class="font-bold text-xl">Usuarios</div>
+                        <div class="font-bold text-xl">Reservas</div>
                     </div>
                     <p class="text-gray-700 text-base text-justify">
-                        La sección de administración de usuarios te permite gestionar de manera eficiente todos los usuarios registrados en tu plataforma.
+                        La sección de administración de reservas te permite gestionar de manera eficiente todos los reservas registrados en tu plataforma.
                     </p>
                 </div>
                 <div class="px-6 pt-4 pb-2">
-                    <a href="../user/listarUsuario.php"
+                    <a href="../reserva/listarReserva.php"
                         class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Ingresar
                     </a>

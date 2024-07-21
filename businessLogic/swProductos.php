@@ -119,4 +119,16 @@ else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
     echo json_encode($response);
     exit();
 }
+
+// Manejar método GET con ID - Obtener un producto específico
+else if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+    $objConexion = new ConexionDB();
+    $objProducto = new Producto($objConexion);
+    $objProducto->setId($id);
+    $producto = $objProducto->listarProductos();
+    echo json_encode($producto[0]);
+    exit();
+}
+
 ?>
