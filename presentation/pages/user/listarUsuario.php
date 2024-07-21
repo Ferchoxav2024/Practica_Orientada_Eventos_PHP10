@@ -19,6 +19,7 @@
             <table class="min-w-full bg-white" id="table-usuario">
                 <thead class="bg-gray-800 text-white">
                     <tr>
+                        <th class="py-2 px-6 text-left">Id</th>
                         <th class="py-2 px-6 text-left">Cédula</th>
                         <th class="py-2 px-6 text-left">Nombre</th>
                         <th class="py-2 px-6 text-left">Apellido</th>

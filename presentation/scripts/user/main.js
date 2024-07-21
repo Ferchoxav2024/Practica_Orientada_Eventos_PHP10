@@ -13,8 +13,15 @@ async function getUsuarios() {
        
         // Create table row
         const row = document.createElement('tr');
+
+
   
         // Create cells for each usuario property
+        const id = document.createElement('td');
+        id.classList.add('py-3', 'px-6', 'text-left', 'whitespace-nowrap');
+        id.textContent = cont;
+        cont++;
+  
         const cedula = document.createElement('td');
         cedula.classList.add('py-3', 'px-6', 'text-left', 'whitespace-nowrap');
         cedula.textContent = usuario.cedula;
@@ -56,7 +63,7 @@ async function getUsuarios() {
         const deleteIcon = document.createElement('i');
         deleteIcon.classList.add('fas', 'fa-trash-alt', 'text-red-500', 'cursor-pointer', 'mr-2');
         deleteIcon.setAttribute('title', 'Eliminar');
-        deleteIcon.addEventListener('click', () => deleteUsuario(usuario.cedula));
+        deleteIcon.addEventListener('click', () => deleteUsuario(usuario.id));
 
   
         // Add icons to the action cell
@@ -65,6 +72,7 @@ async function getUsuarios() {
         
         
         // Add cells to row
+        row.appendChild(id);
         row.appendChild(cedula);
         row.appendChild(firstName);
         row.appendChild(lastName);
@@ -88,7 +96,7 @@ async function getUsuarios() {
     const confirmDelete = confirm('¿Estás seguro de que deseas eliminar este usuario?');
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swUser.php?cedula=${usuarioId}`, {
+        const response = await fetch(`http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swUser.php?id=${usuarioId}`, {
           method: 'DELETE'
         });
         getUsuarios();

@@ -6,6 +6,7 @@ include ('../dataAccess/conexion/Conexion.php');
 class Usuario
 {
     #atributos
+    private string $id;
     private string $cedula;
     private string $firstName;
     private string $lastName;
@@ -23,6 +24,15 @@ class Usuario
     }
 
     // Métodos Get y Set para cada propiedad
+    public function setId(string $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getId(): string
+    {
+        return $this->id;
+    }
     public function setCedula(string $cedula): void
     {
         $this->cedula = $cedula;
@@ -129,9 +139,9 @@ class Usuario
     public function eliminarUsuario():bool
     {
         try {
-            $sql= "DELETE FROM usuarios WHERE cedula=?";
+            $sql= "DELETE FROM usuarios WHERE id=?";
             $stmt= $this->connectionDB->prepare($sql);
-            $stmt->execute(array($this->getCedula()));
+            $stmt->execute(array($this->getId()));
             $count=$stmt->rowCount();
             return $this->affectedColumns($count);
         } catch (PDOException $e) {
@@ -143,9 +153,9 @@ class Usuario
     public function editarUsuario(){
         try {
         
-            $sql="UPDATE usuarios SET firstName = ?, lastName = ?, password = ?, telefono = ?, perfil = ? WHERE cedula = ?";
+            $sql="UPDATE usuarios SET cedula = ?, firstName = ?, lastName = ?, password = ?, telefono = ?, perfil = ? WHERE id = ?";
             $stmt=$this->connectionDB->prepare($sql);
-            $stmt->execute(array($this->getFirstName(),$this->getLastName(),$this->getPassword(), $this->getTelefono(),$this->getPerfil(),$this->getCedula()));
+            $stmt->execute(array($this->getCedula(),$this->getFirstName(),$this->getLastName(),$this->getPassword(), $this->getTelefono(),$this->getPerfil(),$this->getId()));
             $count=$stmt->rowCount();
             return $this->affectedColumns($count);
         } catch (PDOException $e) {

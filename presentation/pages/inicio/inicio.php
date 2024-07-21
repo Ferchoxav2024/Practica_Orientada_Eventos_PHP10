@@ -9,29 +9,11 @@
 <body class="bg-center bg-cover">
 
     <!-- Barra de navegación -->
-    <nav class="bg-[#dfded9] shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center"> <!-- Alineado a la derecha -->
-            <div class="flex items-center space-x-4">
-                <a href="inicio.php">
-                    <img class="h-12 w-auto rounded-full border-2 border-[#ed2839]" src="../img/logo.jpg" alt="Logo">
-                </a>
-                <h1 class="text-3xl font-bold text-[#191d20]">Carne al Fuego</h1>
-            </div>
-            <div class="flex items-center space-x-4"> <!-- Botones alineados a la derecha -->
-                <a href="./cliente_usuario.php" class="bg-[#ed2839] text-white px-4 py-2 rounded-md">Inicio</a>
-                <a href="./ver_productos.php" class="bg-[#ed2839] text-white px-4 py-2 rounded-md">Producto</a>
-                <a href="perfil_usuario.php" class="inline-flex items-center">
-                    <img src="../img/logo2.png" alt="Registrar Usuario" class="h-12 w-auto rounded-full border-2 border-[#ed2839]">
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
+    <?php include ('../../components/navigationcli.php'); ?>
 
 
     <!-- Sección de bienvenida -->
-    <section class="flex flex-col items-center justify-center text-center py-20 h-[600px] relative" style="background-image: url('../img/fondoinicio.jpeg'); background-size: cover; background-position: center;">
+    <section class="flex flex-col items-center justify-center text-center py-20 h-[600px] relative" style="background-image: url('../../styles/img/fondoinicio.jpeg'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Capa de superposición -->
         <div class="relative z-10">
             <h2 class="text-5xl font-bold text-white mb-4">Carne al Fuego</h2>
@@ -39,7 +21,7 @@
         </div>
     </section>
     <!-- Información adicional -->
-    <section class="flex flex-col items-center justify-center text-center py-20 h-[600px] relative" style="background-image: url('../img/Pie.jpeg'); background-size: cover; background-position: center;">
+    <section class="flex flex-col items-center justify-center text-center py-20 h-[600px] relative" style="background-image: url('../../styles/img/Pie.jpeg'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Capa de superposición -->
         <div class="relative z-10 text-white">
             <h3 class="text-4xl font-bold mb-6">Horarios</h3>

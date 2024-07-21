@@ -45,7 +45,7 @@ window.addEventListener('message', (event) => {
     console.log(usuario)
   
     try {
-        const response = await fetch('http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swCategoria.php', {
+        const response = await fetch('http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swUser.php', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

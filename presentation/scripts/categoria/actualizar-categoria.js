@@ -3,7 +3,7 @@ window.addEventListener('message', (event) => {
     document.getElementById('id').value = categoria.id;
     document.getElementById('nombre_categoria').value = categoria.nombre_categoria;
     document.getElementById('descripcion_categoria').value = categoria.descripcion_categoria;
-    document.getElementById('imagen_categoria') = categoria.imagen_categoria;
+    document.getElementById('imagen_categoria').value = categoria.imagen_categoria;
   });
   
   async function actualizarCategoria(event) {
@@ -12,16 +12,13 @@ window.addEventListener('message', (event) => {
     const id = document.getElementById('id').value;
     const nombre_categoria = document.getElementById('nombre_categoria').value;
     const descripcion_categoria = document.getElementById('descripcion_categoria').value;
-    const imagen_categoria = document.getElementById('imagen_categoria');
-
-
-    const file = imagen_categoria.files[0];
+    const imagen_categoria = document.getElementById('imagen_categoria').value;
 
     const categoria = {
         id: id,
         nombre_categoria: nombre_categoria,
         descripcion_categoria: descripcion_categoria,
-        imagen_categoria: file
+        imagen_categoria: imagen_categoria
     };
 
     console.log(categoria)
@@ -34,7 +31,7 @@ window.addEventListener('message', (event) => {
             },
             body: JSON.stringify(categoria)
         });
-       // window.close();
+        window.close();
         
     } catch (error) {
         console.error('Error al actualizar usuario:', error);
