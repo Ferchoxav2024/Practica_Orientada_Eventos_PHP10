@@ -21,7 +21,7 @@ async function loginUser() {
     formData.append('password', password);
 
     try {
-        const response = await fetch('http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swUser.php', {
+        const response = await fetch('http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swLogin.php', {
             method: 'POST',
             body: formData
         });
@@ -38,7 +38,7 @@ async function loginUser() {
                 if (perfil === 'administrador') {
                     window.location.href = '../../../presentation/pages/administrador/OptionsList.php';
                 } else if (perfil === 'cliente') {
-                    window.location.href = '../../../presentation/pages/categoria/addCategoria.php';
+                    window.location.href = '../../../presentation/pages/user/cliente.php';
                 }
             });
         } else {
@@ -57,14 +57,6 @@ async function loginUser() {
         });
     }
 }
-
-
-
-
-
-
-
-
 
 
 
