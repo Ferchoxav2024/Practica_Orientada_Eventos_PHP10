@@ -52,22 +52,26 @@ else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 
 // Editar Usuario
-
 else if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+    // Obtener datos JSON enviados
+    $data = json_decode(file_get_contents('php://input'), true);
 
-    $data= json_decode(file_get_contents('php://input'), true);
-    $id = ($data['id']);
-    $cedula = $_POST['cedula'] ;
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-    $perfil = $_POST['perfil'];
+    // Obtener el ID de la categoría y otros datos a actualizar
+    $id = intval($data['id']);
+    $cedula = $data['cedula'] ;
+    $firstName = $data['firstName'];
+    $lastName = $data['lastName'];
+    $password = $data['password'];
+    $email = $data['email'];
+    $telefono = $data['telefono'];
+    $perfil = $data['perfil'];
+
 
     $objConexion = new ConexionDB();
     $objUser = new Usuario($objConexion);
 
+
+    // Setear datos en el objeto de categoría
     $objUser->setId($id);
     $objUser->setCedula($cedula);
     $objUser->setFirstName($firstName);

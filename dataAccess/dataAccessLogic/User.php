@@ -6,7 +6,7 @@ include ('../dataAccess/conexion/Conexion.php');
 class Usuario
 {
     #atributos
-    private string $id;
+    private int $id;
     private string $cedula;
     private string $firstName;
     private string $lastName;
@@ -24,12 +24,12 @@ class Usuario
     }
 
     // Métodos Get y Set para cada propiedad
-    public function setId(string $id): void
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    public function getId(): string
+    public function getId(): int
     {
         return $this->id;
     }
