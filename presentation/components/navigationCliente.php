@@ -19,7 +19,7 @@
                 </a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="../administrador/OptionsList.php" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                <a href="../user/cliente.php" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
                     <i class="fas fa-home mr-1"></i> Página Principal
                 </a>
                 <a href="#" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
