@@ -49,11 +49,14 @@
                     <input type="text" id="telefono" name="telefono" placeholder="Ingrese su telefono"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
+                
                 <div class="mb-4">
-                    <label for="perfil" class="block text-gray-700 text-sm font-bold mb-2">perfil :</label>
-                    <input type="text" id="perfil" name="perfil" placeholder="Ingrese su perfil"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
+                <label for="perfil" class="block text-gray-700 text-sm font-bold mb-2">Tipo de Cuenta:</label>
+                <select id="perfil" name="perfil" class="input-field" required>
+                    <option value="cliente">Cliente</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+            </div>
                 
                 <div class="flex items-center justify-between">
                     <button type="submit"
