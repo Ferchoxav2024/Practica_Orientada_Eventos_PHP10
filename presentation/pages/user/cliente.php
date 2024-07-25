@@ -13,6 +13,14 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliente</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+        section {
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <?php include('../../components/navigationCliente.php');?>
@@ -29,7 +37,7 @@ if (!isset($_SESSION['user'])) {
     </section>
 
     <!-- Sección de productos -->
-    <section class="relative bg-cover bg-center py-16" style="background-image: url('../../styles/img/products-bg.jpg');">
+    <section class="relative bg-cover bg-center py-16" style="background-image: url('../../styles/img/fondoproduc.jpeg');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 container mx-auto text-white">
             <h2 class="text-4xl font-bold mb-8 text-center">Nuestros Productos</h2>
@@ -42,7 +50,7 @@ if (!isset($_SESSION['user'])) {
                     ['nombre' => 'Producto 3', 'descripcion' => 'Descripción del producto 3', 'precio' => '20.00']
                 ];
                 foreach ($productos as $producto) {
-                    echo '<div class="bg-white text-black p-6 rounded-lg shadow-md">';
+                    echo '<div class="bg-white text-black p-6 rounded-lg shadow-md transition transform hover:scale-105">';
                     echo '<h3 class="text-2xl font-bold mb-4">' . $producto['nombre'] . '</h3>';
                     echo '<p class="mb-4">' . $producto['descripcion'] . '</p>';
                     echo '<p class="font-bold mb-4">$' . $producto['precio'] . '</p>';
@@ -55,7 +63,7 @@ if (!isset($_SESSION['user'])) {
     </section>
 
     <!-- Sección de información -->
-    <section class="relative bg-cover bg-center py-16" style="background-image: url('../../styles/img/fondo.jpg');">
+    <section class="relative bg-cover bg-center py-16" style="background-image: url('../../styles/img/Pie.jpeg');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 container mx-auto text-white text-center">
             <h2 class="text-4xl font-bold mb-8">Información del Restaurante</h2>
