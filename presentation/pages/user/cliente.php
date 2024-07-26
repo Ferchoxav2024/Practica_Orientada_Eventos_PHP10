@@ -15,14 +15,7 @@ $userId = $_SESSION['user']['id']; // Asegúrate de que esta línea obtiene corr
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliente</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            scroll-behavior: smooth;
-        }
-        section {
-            transition: opacity 1s ease-in-out;
-        }
-    </style>
+
 </head>
 <body class="bg-gray-100">
     <?php include('../../components/navigationCliente.php');?>
@@ -49,6 +42,18 @@ $userId = $_SESSION['user']['id']; // Asegúrate de que esta línea obtiene corr
         </div>
     </section>
 
+     <!-- Sección de información -->
+     <section class="relative bg-cover bg-center py-16" style="background-image: url('../../styles/img/fondo.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 container mx-auto text-white text-center">
+            <h2 class="text-4xl font-bold mb-8">Información del Restaurante</h2>
+            <p class="text-2xl mb-4">Nombre del Restaurante: Carne al Fuego</p>
+            <p class="text-xl mb-4">Redes Sociales: Facebook, Instagram, Twitter</p>
+            <p class="text-xl mb-4">Teléfono: +123 456 7890</p>
+            <p class="text-xl mb-4">Horarios: Lunes a Domingo - 10:00 AM a 10:00 PM</p>
+        </div>
+    </section>
+
     <!-- Ventana del carrito -->
     <div class="fixed bottom-0 right-0 m-8 bg-white rounded-lg shadow-lg p-4 z-50 max-h-96 overflow-y-auto" id="carrito" style="display: none;">
         <div class="flex justify-between items-center mb-4">
@@ -66,7 +71,7 @@ $userId = $_SESSION['user']['id']; // Asegúrate de que esta línea obtiene corr
     </div>
 
     <!-- Botones para mostrar el carrito y las reservas -->
-    <button class="fixed bottom-0 right-0 m-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-40 mb-16" id="mostrar-reservas">
+    <button class="fixed bottom-0 right-0 m-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-40 mb-20" id="mostrar-reservas">
         Ver Reservas
     </button>
     <button class="fixed bottom-0 right-0 m-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-40" id="mostrar-carrito">

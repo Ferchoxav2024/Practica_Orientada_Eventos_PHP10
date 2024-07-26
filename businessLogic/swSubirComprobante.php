@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $comprobante = $_FILES['comprobante'];
 
         // Verificar y subir el archivo
-        $directorio = "../comprobantes/"; // Ruta relativa correcta
+        $directorio = "comprobantes/"; // Ruta relativa correcta
         $nombreArchivo = time() . "_" . basename($comprobante['name']);
         $rutaTemporal = $comprobante['tmp_name'];
         $rutaDefinitiva = $directorio . $nombreArchivo;
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         if (move_uploaded_file($rutaTemporal, $rutaDefinitiva)) {
-            $rutaParaBD = "comprobantes/" . $nombreArchivo; // Ruta que se guardará en la base de datos
+            $rutaParaBD = $directorio . $nombreArchivo; // Ruta que se guardará en la base de datos
 
             $objConexion = new ConexionDB();
             $objReservas = new Reservas($objConexion);

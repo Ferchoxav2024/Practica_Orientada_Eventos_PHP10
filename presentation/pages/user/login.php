@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-gray-100">
-<?php include('../../components/navigationCliente.php');?>
+<?php include ('../../components/navegacionlogin.php'); ?>
 
     <div class="container mx-auto max-w-md py-8">
         <form id="loginForm" class="bg-white shadow-md rounded px-10 pt-6 pb-8 mb-4">

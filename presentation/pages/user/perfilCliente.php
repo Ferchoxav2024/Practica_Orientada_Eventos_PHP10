@@ -19,25 +19,8 @@ $user = $_SESSION['user'];
 <body class="bg-center bg-cover" style="background-image: url('../../styles/img/fondo.jpg'); background-size: 40%; background-position: center;">
 
     <!-- Barra de navegación -->
-    <nav class="bg-gray-200 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="cliente.php">
-                            <img class="h-12 w-auto rounded-full border-2 border-red-600" src="../../styles/img/logo.jpg" alt="Logo">
-                        </a>
-                        <h1 class="text-3xl font-bold text-gray-900 text-center ml-4">Carne al Fuego</h1>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <a href="perfilCliente.php" class="inline-flex items-center">
-                        <img src="../../styles/img/logo2.png" alt="Registrar Usuario" class="h-12 w-auto rounded-full border-2 border-red-600">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <?php include('../../components/navigationCliente.php');?>
+
 
     <!-- Contenido del perfil del usuario -->
     <div class="max-w-4xl mx-auto py-12 sm:px-6 lg:px-8 text-gray-900">

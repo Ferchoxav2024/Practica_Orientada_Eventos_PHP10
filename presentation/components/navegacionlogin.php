@@ -13,24 +13,20 @@
     <nav class="bg-gray-800 p-2">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <a href="../user/cliente.php" class="flex items-center">
+                <a href="../index.php" class="flex items-center">
                     <img src="../../styles/img/logo3.png" alt="Logo" class="h-12 w-12 mr-4">
-                    <h1 class="text-white text-xl font-bold">Restaurante Carne al Fuego </h1>
+                    <h1 class="text-white text-xl font-bold">Restaurante Carne al Fuego - Administrador</h1>
                 </a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="../user/cliente.php" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
-                    <i class="fas fa-home mr-1"></i> Página Principal
+               
+                <a href="../user/registro.php" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                    <i class="fas fa-users mr-1"></i> Registrarse
                 </a>
-                <a href="perfilCliente.php" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
-                    <i class="fas fa-users mr-1"></i> Perfil
+                <a href="../user/login.php" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                    <i class="fas fa-users mr-1"></i> Iniciar Sesion
                 </a>
-                <a href="login.php" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
-                    <i class="fas fa-users mr-1"></i> Cerrar Sesión
-                </a>
-                
-            </div>            
-        </div>
+            </div>
         </div>
     </nav>
     <!-- Resto del contenido del body -->
