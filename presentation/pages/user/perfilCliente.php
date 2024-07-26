@@ -43,6 +43,11 @@ $user = $_SESSION['user'];
     <div class="max-w-4xl mx-auto py-12 sm:px-6 lg:px-8 text-gray-900">
         <div class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-2xl font-bold mb-8 text-center bg-gray-900 text-white p-4 rounded">Perfil del Cliente</h2>
+            <!-- Botón para cambiar colores -->
+
+    <button id="colorToggleBtn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4">Cambiar Colores</button>
+
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <?php
                 $fields = [
@@ -73,13 +78,14 @@ $user = $_SESSION['user'];
             <!-- Botón de eliminación -->
             <div class="mt-8 text-center">
                 <form id="delete-form" method="post">
-                    <button type="button" onclick="confirmDeletion()" class="bg-red-500 text-white px-4 py-2 rounded">Eliminar Cuenta</button>
+                    <button type="button" onclick="confirmDeletion()" class="bg-red-700  hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4">Eliminar Cuenta</button>
                     <input type="hidden" name="delete" value="1">
                 </form>
             </div>
         </div>
     </div>
 
+    <script src="../../scripts/perfil/perfil.js"></script>
     <script src="../../scripts/perfil/actualizar-perfil.js"></script>
     <script src="../../scripts/perfil/borrar-perfil.js"></script>
 </body>

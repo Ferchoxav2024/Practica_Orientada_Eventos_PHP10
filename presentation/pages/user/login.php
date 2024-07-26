@@ -12,10 +12,9 @@
 <?php include('../../components/navigationCliente.php');?>
 
     <div class="container mx-auto max-w-md py-8">
-       
-        <form id="loginForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form id="loginForm" class="bg-white shadow-md rounded px-10 pt-6 pb-8 mb-4">
             <div class="flex items-center justify-between mb-4 text-justify">
-            <h1 class="text-3xl font-bold text-gray-800">Login</h1>
+                <h1 class="text-3xl font-bold text-gray-800">Login</h1>
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
@@ -30,6 +29,9 @@
             <div class="flex items-center justify-between">
                 <button type="submit"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</button>
+                
+                <button type="button" id="colorToggleBtn"
+                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4">Cambiar Colores</button>
             </div>
         </form>
     </div>
