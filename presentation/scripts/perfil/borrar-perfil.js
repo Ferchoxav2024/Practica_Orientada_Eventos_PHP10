@@ -16,11 +16,15 @@ function confirmDeletion() {
 }
 
 async function deleteUser() {
+    const userId = document.querySelector('[data-user-id]').getAttribute('data-user-id');
+
     try {
-        const response = await fetch('http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swUser.php', {
+        const response = await fetch(`http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swUser.php?id=${userId}`, {
             method: 'DELETE'
         });
+        
         const data = await response.json();
+        console.log(data);
         
         if (data.success) {
             Swal.fire({

@@ -9,7 +9,7 @@ function editField(field, currentValue) {
         cancelButtonText: 'Cancelar',
         inputValidator: (value) => {
             if (!value) {
-                return '¡El campo no puede estar vacío!'
+                return '¡El campo no puede estar vacío!';
             }
         }
     }).then((result) => {
@@ -21,16 +21,24 @@ function editField(field, currentValue) {
 }
 
 async function updateField(field, newValue) {
-    const formData = new FormData();
-    formData.append('field', field);
-    formData.append('newValue', newValue);
+    const userId = document.querySelector('[data-user-id]').getAttribute('data-user-id');
+    const usuario = {
+        id: userId,
+        field: field,
+        newValue: newValue
+    };
 
     try {
         const response = await fetch('http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swUser.php', {
             method: 'PUT',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuario)
         });
+        
         const data = await response.json();
+        console.log('Respuesta del servidor:', data);
         
         if (data.success) {
             document.getElementById(`${field}-value`).textContent = newValue;
