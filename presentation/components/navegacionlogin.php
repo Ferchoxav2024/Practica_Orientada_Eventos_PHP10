@@ -13,7 +13,7 @@
     <nav class="bg-gray-800 p-2">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <a href="../index.php" class="flex items-center">
+                <a href="../../index.php" class="flex items-center">
                     <img src="../../styles/img/logo3.png" alt="Logo" class="h-12 w-12 mr-4">
                     <h1 class="text-white text-xl font-bold">Restaurante Carne al Fuego - Administrador</h1>
                 </a>
