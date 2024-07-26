@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarProductos();
     document.getElementById('mostrar-carrito').addEventListener('click', toggleCarrito);
     document.getElementById('minimizar-carrito').addEventListener('click', minimizarCarrito);
+    document.querySelector('.bg-green-500').addEventListener('click', guardarReserva);
 });
 
 let carrito = [];
@@ -92,4 +93,38 @@ function toggleCarrito() {
 function minimizarCarrito() {
     const carritoDiv = document.getElementById('carrito');
     carritoDiv.style.display = 'none';
+}
+
+async function guardarReserva() {
+    const usuario_id = userId;  // Utilizamos el ID del usuario pasado desde PHP
+    const total = parseFloat(document.getElementById('carrito-total').textContent.replace('$', ''));
+
+    const data = {
+        usuario_id,
+        productos: carrito,
+        total
+    };
+
+    try {
+        const response = await fetch('http://localhost/Practica_Orientada_Eventos_PHP10/businessLogic/swReservas.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert('Reserva guardada exitosamente');
+            carrito = [];
+            actualizarCarrito();
+        } else {
+            alert('Error al guardar la reserva: ' + result.message);
+            console.error('Error:', result.message);
+        }
+    } catch (error) {
+        console.error('Error al guardar la reserva:', error);
+        alert('Error al guardar la reserva');
+    }
 }

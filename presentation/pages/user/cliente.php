@@ -4,6 +4,8 @@ if (!isset($_SESSION['user'])) {
     header('Location: login.php');
     exit();
 }
+
+$userId = $_SESSION['user']['id']; // Asegúrate de que esta línea obtiene correctamente el ID del usuario desde la sesión
 ?>
 
 <!DOCTYPE html>
@@ -63,11 +65,29 @@ if (!isset($_SESSION['user'])) {
         <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">Pagar</button>
     </div>
 
-    <!-- Botón para mostrar el carrito -->
+    <!-- Botones para mostrar el carrito y las reservas -->
+    <button class="fixed bottom-0 right-0 m-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-40 mb-16" id="mostrar-reservas">
+        Ver Reservas
+    </button>
     <button class="fixed bottom-0 right-0 m-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-40" id="mostrar-carrito">
         Ver Carrito
     </button>
 
+    <!-- Ventana emergente de reservas -->
+    <div id="reservas-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50" style="display: none;">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-h-screen overflow-y-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Mis Reservas</h2>
+            <div id="reservas-grid" class="space-y-8">
+                <!-- Reservas se cargarán aquí dinámicamente -->
+            </div>
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        const userId = <?php echo $userId; ?>; // Pasamos el ID del usuario a JavaScript
+    </script>
     <script src="../../scripts/user/carrito.js"></script>
+    <script src="../../scripts/user/reservas.js"></script>
 </body>
 </html>
