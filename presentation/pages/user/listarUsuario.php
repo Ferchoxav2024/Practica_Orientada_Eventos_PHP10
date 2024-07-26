@@ -11,7 +11,7 @@
 
     <div class="container mx-auto py-2">
         <div class="flex items-center justify-between mb-4">
-            <h1 class="text-3xl font-bold text-gray-800">Gestión de Usuarios</h1>
+            <h1 class="text-3xl font-bold text-white">Gestión de Usuarios</h1>
             <a href="addUser.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Crear Usuario</a>
         </div>
 

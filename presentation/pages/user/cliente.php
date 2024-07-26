@@ -15,10 +15,12 @@ $userId = $_SESSION['user']['id']; // Asegúrate de que esta línea obtiene corr
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliente</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-
 </head>
 <body class="bg-gray-100">
     <?php include('../../components/navigationCliente.php');?>
+
+    <!-- Botón para cambiar colores para daltónicos -->
+    
 
     <!-- Sección de bienvenida -->
     <section class="relative bg-cover bg-center h-screen" style="background-image: url('../../styles/img/fondoinicio.jpeg');">
@@ -69,7 +71,10 @@ $userId = $_SESSION['user']['id']; // Asegúrate de que esta línea obtiene corr
         </div>
         <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">Pagar</button>
     </div>
-
+    
+    <div class="fixed bottom-0 right-0 m-8  text-white font-bold py-2 px-4 rounded z-40 mb-40">
+        <button id="colorToggleBtn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4">Cambiar Colores</button>
+    </div>
     <!-- Botones para mostrar el carrito y las reservas -->
     <button class="fixed bottom-0 right-0 m-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-40 mb-20" id="mostrar-reservas">
         Ver Reservas
@@ -94,5 +99,6 @@ $userId = $_SESSION['user']['id']; // Asegúrate de que esta línea obtiene corr
     </script>
     <script src="../../scripts/user/carrito.js"></script>
     <script src="../../scripts/user/reservas.js"></script>
+    <script src="../../scripts/user/cliente.js"></script>
 </body>
 </html>

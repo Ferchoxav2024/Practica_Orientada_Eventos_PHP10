@@ -29,6 +29,8 @@ async function agregarUsuario(event) {
             method: 'POST',
             body: formData
         });
+        document.getElementById('usuarioForm').reset(); // Resetear el formulario
+
     } catch (error) {
         console.error('Error al registrar categoría:', error);
     }

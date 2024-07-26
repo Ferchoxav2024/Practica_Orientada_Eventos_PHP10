@@ -41,7 +41,7 @@ async function cargarReservas() {
                     <span class="font-bold">Total a pagar:</span>
                     <span class="font-bold">$${total.toFixed(2)}</span>
                 </div>
-                ${reserva.comprobante ? `<img src="../../businessLogic/${reserva.comprobante}" alt="Comprobante de Pago" class="mb-4 w-full rounded-lg">` : ''}
+                ${reserva.comprobante ? `<img src="../../../businessLogic/${reserva.comprobante}" alt="Comprobante de Pago" class="mb-4 w-full rounded-lg">` : ''}
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="mostrarSubirComprobante(${reserva.id})">Subir Comprobante</button>
             `;
             reservasGrid.appendChild(reservaDiv);
